@@ -1,14 +1,7 @@
--- Open the file for reading
-local file = io.open('input.txt', 'r')
-if not file then
-    error("Failed to open file")
-end
+package.path = package.path .. ';../utils/fileUtils.lua'
+local FileUtils = require 'fileUtils.lua'
 
--- Read the entire content of the file
-local content = file:read('*a')
-
--- Close the file
-file:close()
+content = FileUtils.getInput()
 
 local floor = 0
 
