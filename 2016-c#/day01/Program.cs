@@ -25,10 +25,8 @@
         foreach (var instruction in instructions) {
             var turn = instruction[0];
             var step = int.Parse(instruction.Substring(1));
-            // Console.WriteLine($"turn: {turn}, step: {step}");
             
             direction = turn == 'L' ? (Direction)(((int)direction + 3) % 4) : (Direction)(((int)direction + 1) % 4);
-            // Console.WriteLine($"direction: {direction}");
             
             switch (direction) {
                 case Direction.North: position.y += step; break;
